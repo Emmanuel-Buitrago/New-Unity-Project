@@ -50,7 +50,7 @@ public class TriggerBoxGame : MonoBehaviour
     }
     private void Reposicionar(Collider other)
     {
-        if (other.GetComponent<Collider>().gameObject.name== "Sphere" || other.GetComponent<Collider>().gameObject.layer == LayerMask.NameToLayer("Floor")) 
+        if (other.GetComponent<Collider>().gameObject.name== "Sphere") 
         { 
             other.GetComponent<Collider>().gameObject.transform.position = new Vector3(0.679f, 1.453999f, -6.019f);
         }
