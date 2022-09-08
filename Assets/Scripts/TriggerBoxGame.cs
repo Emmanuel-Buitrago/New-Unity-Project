@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TriggerBoxGame : MonoBehaviour
 {
+    public ParticleSystem[] SparkleVFX;
+    
     public Counter cont;
     public string TagVariableName;
     private int counter;
@@ -23,6 +25,7 @@ public class TriggerBoxGame : MonoBehaviour
         {
             other.GetComponent<Collider>().gameObject.SetActive(false);
             Contador();
+            Efectos();
             Debug.Log("Score "+TagVariableName+" : " + counter);
 
         }else{
@@ -37,6 +40,13 @@ public class TriggerBoxGame : MonoBehaviour
         cont.Change();
         return counter;
 
+    }
+    private void Efectos()
+    {
+        foreach(var s in SparkleVFX)
+        {
+            s.Play();
+        }
     }
     private void Reposicionar(Collider other)
     {
