@@ -4,81 +4,89 @@ using UnityEngine;
 
 public class TabVerdLogica : MonoBehaviour
 {
-    public ParticleSystem[] SparkleFuseVFX;
+    public ParticleSystem[] SparkleFuseTrueVFX;
+    public ParticleSystem[] SparkleFuseFalseVFX;
 
-    public bool respuesta=false;
-    private bool valorSphere=true;
-    public bool ValorCollider=true;
-    private bool TiempoController=false ;
+    private bool valorSphere;
+    public bool valorCollider;
 
-    private bool m_SpherePresent;
+    private bool m_SpherePresent = false;
 
     private Vector3 initialPos = new Vector3(0.302f, 0.78f, -6.213f);
 
     // Cuando la esfera entra en contacto con el socket
     void OnTriggerEnter(Collider other)
     {
-        if (m_SpherePresent) {
-            if (other.gameObject.name == "True")
+        if (other.gameObject.name == "True")
+        {
+            Debug.Log("Se ingreso la esfera True");
+            valorSphere = true;
+        }
+        else
+        {
+            if (other.gameObject.name == "False")
             {
-                Debug.Log("Se ingreso la esfera True");
-                valorSphere = true;
-            }
-            else
-            {
-                if (other.gameObject.name == "False")
-                {
-                    Debug.Log("Se ingreso la esfera False");
-                    valorSphere = false;
-                }
+                Debug.Log("Se ingreso la esfera False");
+                valorSphere = false;
             }
         }
-
-
     }
 
     // Cuando la esfera se mantiene en el socket
     void OnTriggerStay(Collider other)
-    {
-        if (m_SpherePresent && respuesta)
+    {   
+        if (m_SpherePresent && valorSphere == valorCollider)
         {
-            other.gameObject.GetComponent<Rigidbody>().constraints=RigidbodyConstraints.FreezePosition;
+            other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
             Debug.Log("Posicion freezeada");
+            Debug.Log("Respuesta correcta");
+            Efectos(true);
+            m_SpherePresent = false;
             //desactivar script XR Grab interactor
         }
         else {
-            if (respuesta==false) {
-                other.gameObject.transform.position = initialPos;
-                Debug.Log("Cambio de posicion");
+            if (m_SpherePresent && valorSphere != valorCollider) {
+                m_SpherePresent = false;
+                Debug.Log("Respuesta incorrecta");
+                gameObject.GetComponent<XRExclusiveSocketInteractor>().socketActive = false;
+                StartCoroutine(IncorrectAnw(other));
             }
         }
-    }
-    // Cuando la esfera Sale del socket
 
-    void OnTriggerExit(Collider other)
+    }
+    IEnumerator IncorrectAnw(Collider other)
+    {
+        yield return new WaitForSeconds(1);
+        gameObject.GetComponent<XRExclusiveSocketInteractor>().socketActive = true;
+        other.gameObject.transform.position = initialPos;
+        Debug.Log("Cambio de posicion");
+        Efectos(false);
+    }
+    public void SetFalsePresentSphere()
     {
         m_SpherePresent = false;
     }
     public void BooleanSocketed()
     {
         m_SpherePresent = true;
-        if (valorSphere == ValorCollider)
-        { 
-            respuesta = true;
-            Debug.Log("Respuesta correcta");
-            Efectos();
+    }
+    public void Efectos(bool valorRespuesta)
+    {
+        if (valorRespuesta)
+        {
+            foreach (var s in SparkleFuseTrueVFX)
+            {
+                s.Play();
+            }
         }
-        else { respuesta = false;
-            Debug.Log("Respuesta incorrecta");
+        else
+        {
+            foreach (var s in SparkleFuseFalseVFX)
+            {
+                s.Play();
+            }
         }
 
-    }
-    public void Efectos()
-    {
-        foreach (var s in SparkleFuseVFX)
-        {
-            s.Play();
-        }
     }
 }
     
