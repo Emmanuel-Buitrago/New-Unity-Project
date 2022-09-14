@@ -525,9 +525,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
-  m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 0b31bdebcc3244c44bb7984bc1c0be5c,
+  m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: b3d406be64d88994d952c1508975fc8a,
     type: 2}
-  m_InteractableCantHoverMeshMaterial: {fileID: 0}
+  m_InteractableCantHoverMeshMaterial: {fileID: 10651, guid: 0000000000000000f000000000000000,
+    type: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -2475,6 +2476,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 582318673886984674, guid: db680af6e6ae23a488c61dbb2f69cb18,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.09
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db680af6e6ae23a488c61dbb2f69cb18,
         type: 3}
       propertyPath: m_Name
@@ -2518,6 +2524,7 @@ GameObject:
   - component: {fileID: 1380901847}
   - component: {fileID: 1380901846}
   - component: {fileID: 1380901845}
+  - component: {fileID: 1380901848}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -2572,6 +2579,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1380901848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380901844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4f2c0214c9b494fa7eb5b8b2c02885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_System: {fileID: 0}
+  m_TurnAmount: 45
+  m_DebounceTime: 0.5
+  m_EnableTurnLeftRight: 1
+  m_EnableTurnAround: 1
+  m_DelayTime: 0
+  m_TurnUsage: 0
+  m_Controllers: []
+  m_DeadZone: 0.75
 --- !u!1 &1393823519
 GameObject:
   m_ObjectHideFlags: 0
@@ -3508,6 +3536,7 @@ MonoBehaviour:
   SparkleVFX: []
   cont: {fileID: 0}
   TagVariableName: IntBox
+  Reposicion: {x: 0, y: 0, z: 0}
 --- !u!65 &1868009170
 BoxCollider:
   m_ObjectHideFlags: 0

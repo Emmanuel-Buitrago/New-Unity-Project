@@ -9,6 +9,7 @@ public class TriggerBoxGame : MonoBehaviour
     public Counter cont;
     public string TagVariableName;
     private int counter;
+    public Vector3 Reposicion;
 
 
     // Start is called before the first frame update
@@ -52,7 +53,7 @@ public class TriggerBoxGame : MonoBehaviour
     {
         if (other.GetComponent<Collider>().gameObject.name== "Sphere") 
         { 
-            other.GetComponent<Collider>().gameObject.transform.position = new Vector3(0.679f, 1.453999f, -6.019f);
+            other.GetComponent<Collider>().gameObject.transform.position = Reposicion;
         }
     }
 }

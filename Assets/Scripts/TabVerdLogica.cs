@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class TabVerdLogica : MonoBehaviour
 {
@@ -35,17 +36,20 @@ public class TabVerdLogica : MonoBehaviour
     // Cuando la esfera se mantiene en el socket
     void OnTriggerStay(Collider other)
     {   
-        if (m_SpherePresent && valorSphere == valorCollider)
+        if (m_SpherePresent==true && valorSphere == valorCollider)
         {
             other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
             Debug.Log("Posicion freezeada");
             Debug.Log("Respuesta correcta");
             Efectos(true);
             m_SpherePresent = false;
-            //desactivar script XR Grab interactor
+            //desactivar other.script XR Grab interactor
+            gameObject.GetComponent<XRGrabInteractable>().enabled=false;
+            //desactivar gameObject.XR exclusive Socket interactor
+            gameObject.GetComponent<XRExclusiveSocketInteractor>().enabled=false;
         }
         else {
-            if (m_SpherePresent && valorSphere != valorCollider) {
+            if (m_SpherePresent == true && valorSphere != valorCollider) {
                 m_SpherePresent = false;
                 Debug.Log("Respuesta incorrecta");
                 gameObject.GetComponent<XRExclusiveSocketInteractor>().socketActive = false;
