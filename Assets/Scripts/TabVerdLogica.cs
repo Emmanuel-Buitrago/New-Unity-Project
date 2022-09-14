@@ -56,7 +56,7 @@ public class TabVerdLogica : MonoBehaviour
     }
     IEnumerator IncorrectAnw(Collider other)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.2f);
         gameObject.GetComponent<XRExclusiveSocketInteractor>().socketActive = true;
         other.gameObject.transform.position = initialPos;
         Debug.Log("Cambio de posicion");

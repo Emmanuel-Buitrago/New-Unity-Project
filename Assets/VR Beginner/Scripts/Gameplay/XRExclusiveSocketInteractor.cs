@@ -19,6 +19,7 @@ public class XRExclusiveSocketInteractor : XRSocketInteractor
         return base.CanSelect(interactable) && (socketTarget.SocketType == AcceptedType);
     }
 
+    [System.Obsolete]
     public override bool CanHover(XRBaseInteractable interactable)
     {
         return CanSelect(interactable);
