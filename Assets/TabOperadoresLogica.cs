@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class TabVerdLogica : MonoBehaviour
+public class TabOperadoresLogica : MonoBehaviour
 {
+
     public ParticleSystem[] SparkleFuseTrueVFX;
     public ParticleSystem[] SparkleFuseFalseVFX;
 
-    private bool valorSphere;
-    public bool valorCollider;
+    private string valorSphere;
+    public string valorCollider;
 
     private bool m_SpherePresent = false;
 
@@ -18,25 +19,14 @@ public class TabVerdLogica : MonoBehaviour
     // Cuando la esfera entra en contacto con el socket
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "True")
-        {
-            Debug.Log("Se ingreso la esfera True");
-            valorSphere = true;
-        }
-        else
-        {
-            if (other.gameObject.name == "False")
-            {
-                Debug.Log("Se ingreso la esfera False");
-                valorSphere = false;
-            }
-        }
+        Debug.Log("Se ingreso la esfera ");
+        valorSphere = ""+other.gameObject.name;
     }
 
     // Cuando la esfera se mantiene en el socket
     void OnTriggerStay(Collider other)
-    {   
-        if (m_SpherePresent==true && valorSphere == valorCollider)
+    {
+        if (m_SpherePresent == true && valorSphere == valorCollider)
         {
             other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
             Debug.Log("Posicion freezeada");
@@ -44,12 +34,14 @@ public class TabVerdLogica : MonoBehaviour
             Efectos(true);
             m_SpherePresent = false;
             //desactivar other.script XR Grab interactor
-            other.gameObject.GetComponent<XRGrabInteractable>().enabled=false;
+            other.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
             //desactivar gameObject.XR exclusive Socket interactor
-            gameObject.GetComponent<XRExclusiveSocketInteractor>().enabled=false;
+            gameObject.GetComponent<XRExclusiveSocketInteractor>().enabled = false;
         }
-        else {
-            if (m_SpherePresent == true && valorSphere != valorCollider) {
+        else
+        {
+            if (m_SpherePresent == true && valorSphere != valorCollider)
+            {
                 m_SpherePresent = false;
                 Debug.Log("Respuesta incorrecta");
                 gameObject.GetComponent<XRExclusiveSocketInteractor>().socketActive = false;
@@ -93,4 +85,3 @@ public class TabVerdLogica : MonoBehaviour
 
     }
 }
-    

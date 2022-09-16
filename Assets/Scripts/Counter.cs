@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Counter : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class Counter : MonoBehaviour
     {
         contador += 1;
         Debug.Log("La Respuesta total es " + contador);
+        if (GameObject.Find("Sphere") ==false)
+        {
+            SceneManager.LoadScene("2");
+        }
     }
     
 }
