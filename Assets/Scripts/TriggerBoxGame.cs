@@ -16,7 +16,7 @@ public class TriggerBoxGame : MonoBehaviour
     void Start()
     {
         counter =0;
-        cont = GameObject.Find("======= VR MANAGEMENT ======").GetComponent<Counter>();
+        cont = GameObject.Find("Counter").GetComponent<Counter>();
     }
 
     // Update is called once per frame

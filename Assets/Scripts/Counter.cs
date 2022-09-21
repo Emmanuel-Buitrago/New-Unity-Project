@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Counter : MonoBehaviour
 {
     public int contador =0;
+    public string NombreScene;
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -15,7 +16,7 @@ public class Counter : MonoBehaviour
         Debug.Log("La Respuesta total es " + contador);
         if (GameObject.Find("Sphere") ==false)
         {
-            SceneManager.LoadScene("2");
+            GameObject.Find("SceneTransitionManager").GetComponent<SceneTransitionManager>().SceneTransition(NombreScene);
         }
     }
     

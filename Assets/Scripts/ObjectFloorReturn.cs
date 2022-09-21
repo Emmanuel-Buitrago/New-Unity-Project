@@ -10,7 +10,7 @@ public class ObjectFloorReturn : MonoBehaviour
     {
         if (other.GetComponent<Collider>().gameObject.name == col.name)
         {
-            other.GetComponent<Collider>().gameObject.transform.position = new Vector3(0.679f, 0.554f, -6.019f);
+            other.GetComponent<Collider>().gameObject.transform.position = new Vector3(0.495999992f, 0.673999071f, -5.96400023f);
             other.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
     }
