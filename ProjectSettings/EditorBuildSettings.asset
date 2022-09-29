@@ -5,15 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/VR Beginner/Scenes/Final/EscapeRoom.unity
     guid: 0f290611f0f8be4419d06b71aba4e36a
+  - enabled: 1
+    path: Assets/MyScenes/inicial.unity
+    guid: 7cf13395c5fbd784fb2dd695d39b5828
+  - enabled: 1
+    path: Assets/MyScenes/2.unity
+    guid: ab9112e5a46337245bc924feb2d74d47
   - enabled: 1
     path: Assets/MyScenes/1.unity
     guid: ac259726322b52044a78c824c713968a
   - enabled: 1
-    path: Assets/MyScenes/2.unity
-    guid: ab9112e5a46337245bc924feb2d74d47
+    path: Assets/MyScenes/3.unity
+    guid: 7e677a7a5ad5fc3458bcc67c09de127f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 398d945149746a94899cafbfeddf8c9f,
       type: 2}
