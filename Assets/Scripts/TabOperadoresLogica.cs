@@ -28,15 +28,11 @@ public class TabOperadoresLogica : MonoBehaviour
     {
         if (m_SpherePresent == true && valorSphere == valorCollider)
         {
-            other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-            Debug.Log("Posicion freezeada");
-            Debug.Log("Respuesta correcta");
-            Efectos(true);
             m_SpherePresent = false;
-            //desactivar other.script XR Grab interactor
-            other.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
-            //desactivar gameObject.XR exclusive Socket interactor
-            gameObject.GetComponent<XRExclusiveSocketInteractor>().enabled = false;
+
+            Debug.Log("Respuesta correcta");
+            StartCoroutine(CorrectAnw(other));
+
         }
         else
         {
@@ -48,15 +44,25 @@ public class TabOperadoresLogica : MonoBehaviour
                 StartCoroutine(IncorrectAnw(other));
             }
         }
-
     }
     IEnumerator IncorrectAnw(Collider other)
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         gameObject.GetComponent<XRExclusiveSocketInteractor>().socketActive = true;
         other.gameObject.transform.position = initialPos;
         Debug.Log("Cambio de posicion");
         Efectos(false);
+    }
+    IEnumerator CorrectAnw(Collider other)
+    {
+        yield return new WaitForSeconds(0.1f);
+        other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+        Debug.Log("Posicion freezeada");
+        //desactivar other.script XR Grab interactor
+        other.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
+        //desactivar gameObject.XR exclusive Socket interactor
+        gameObject.GetComponent<XRExclusiveSocketInteractor>().enabled = false;
+        Efectos(true);
     }
     public void SetFalsePresentSphere()
     {
