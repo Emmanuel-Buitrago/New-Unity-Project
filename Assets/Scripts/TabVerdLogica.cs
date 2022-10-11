@@ -14,7 +14,7 @@ public class TabVerdLogica : MonoBehaviour
 
     private bool m_SpherePresent = false;
 
-    private Vector3 initialPos = new Vector3(0.302f, 0.78f, -6.213f);
+    private Vector3 initialPos = new Vector3(-0.942f, 0.68f, 0.384f);
 
     void Start()
     {

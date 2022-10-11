@@ -8,6 +8,7 @@ public class TabOperadoresLogica : MonoBehaviour
 
     public ParticleSystem[] SparkleFuseTrueVFX;
     public ParticleSystem[] SparkleFuseFalseVFX;
+    public Counter cont;
 
     private string valorSphere;
     public string valorCollider;
@@ -15,6 +16,11 @@ public class TabOperadoresLogica : MonoBehaviour
     private bool m_SpherePresent = false;
 
     private Vector3 initialPos = new Vector3(0.302f, 0.78f, -6.213f);
+
+    void Start()
+    {
+        cont = GameObject.Find("Counter").GetComponent<Counter>();
+    }
 
     // Cuando la esfera entra en contacto con el socket
     void OnTriggerEnter(Collider other)
@@ -63,6 +69,7 @@ public class TabOperadoresLogica : MonoBehaviour
         //desactivar gameObject.XR exclusive Socket interactor
         gameObject.GetComponent<XRExclusiveSocketInteractor>().enabled = false;
         Efectos(true);
+        cont.Change();
     }
     public void SetFalsePresentSphere()
     {
