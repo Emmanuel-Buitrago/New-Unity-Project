@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class ObjectFloorReturn : MonoBehaviour
+
 {
-    public Vector3 posicion = new Vector3(-0.942f, 0.67535f, 0.384f);
+    public GameObject bandeja;
+    private Vector3 posicion;
     // Start is called before the first frame update
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-            other.GetComponent<Collider>().gameObject.transform.position = posicion;
-            other.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        Debug.Log("el objeto "+other.name+" salio del espacio de juego");
+        posicion = bandeja.transform.position;
+        other.GetComponent<Collider>().gameObject.transform.position = posicion;
+        other.gameObject.GetComponent<Rigidbody>().velocity = posicion;
     }
 }
