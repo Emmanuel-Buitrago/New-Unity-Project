@@ -7,14 +7,14 @@ public class TabVerdLogica : MonoBehaviour
 {
     public ParticleSystem[] SparkleFuseTrueVFX;
     public ParticleSystem[] SparkleFuseFalseVFX;
-    public Counter cont;
+    private Counter cont;
 
     private bool valorSphere;
     public bool valorCollider;
 
     private bool m_SpherePresent = false;
 
-    private Vector3 initialPos = new Vector3(-0.942f, 0.68f, 0.384f);
+    public  Vector3 initialPos = new Vector3(-0.942f, 0.68f, 0.384f);
 
     void Start()
     {

@@ -3,15 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
+public static class Extensions
+{
+    public static bool findList<T>(this List<T> list, T target)
+    {
+        return list.Contains(target);
+    }
+}
+
 public class TabOperadoresLogica : MonoBehaviour
 {
 
     public ParticleSystem[] SparkleFuseTrueVFX;
     public ParticleSystem[] SparkleFuseFalseVFX;
-    public Counter cont;
+    private Counter cont;
 
     private string valorSphere;
-    public string valorCollider;
+    public List<string> valorCollider;
 
     private bool m_SpherePresent = false;
 
@@ -32,7 +40,7 @@ public class TabOperadoresLogica : MonoBehaviour
     // Cuando la esfera se mantiene en el socket
     void OnTriggerStay(Collider other)
     {
-        if (m_SpherePresent == true && valorSphere == valorCollider)
+        if (m_SpherePresent == true &&  valorCollider.findList(valorSphere))
         {
             m_SpherePresent = false;
 
@@ -42,7 +50,7 @@ public class TabOperadoresLogica : MonoBehaviour
         }
         else
         {
-            if (m_SpherePresent == true && valorSphere != valorCollider)
+            if (m_SpherePresent == true && valorCollider.findList(valorSphere)==false)
             {
                 m_SpherePresent = false;
                 Debug.Log("Respuesta incorrecta");
@@ -62,12 +70,8 @@ public class TabOperadoresLogica : MonoBehaviour
     IEnumerator CorrectAnw(Collider other)
     {
         yield return new WaitForSeconds(0.1f);
-        other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
         Debug.Log("Posicion freezeada");
         //desactivar other.script XR Grab interactor
-        other.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
-        //desactivar gameObject.XR exclusive Socket interactor
-        gameObject.GetComponent<XRExclusiveSocketInteractor>().enabled = false;
         Efectos(true);
         cont.Change();
     }
