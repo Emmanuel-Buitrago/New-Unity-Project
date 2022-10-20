@@ -70,7 +70,7 @@ public class TabOperadoresLogica : MonoBehaviour
     IEnumerator CorrectAnw(Collider other)
     {
         yield return new WaitForSeconds(0.1f);
-        Debug.Log("Posicion freezeada");
+        other.gameObject.GetComponent<Transform>().Translate(new Vector3(0, 0, 0));
         //desactivar other.script XR Grab interactor
         Efectos(true);
         cont.Change();
@@ -78,6 +78,7 @@ public class TabOperadoresLogica : MonoBehaviour
     public void SetFalsePresentSphere()
     {
         m_SpherePresent = false;
+        cont.Rest();
     }
     public void BooleanSocketed()
     {

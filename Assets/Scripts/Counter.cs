@@ -21,5 +21,10 @@ public class Counter : MonoBehaviour
             contador=0;
         }
     }
-    
+    public void Rest()
+    {
+        contador -= 1;
+        Debug.Log("La Respuesta total es " + contador);
+    }
+
 }
