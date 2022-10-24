@@ -13,11 +13,13 @@ public class TabVerdLogica : MonoBehaviour
     public bool valorCollider;
 
     private bool m_SpherePresent = false;
-
-    public  Vector3 initialPos = new Vector3(-0.942f, 0.68f, 0.384f);
+    public GameObject posicionReinicio;
+    private  Vector3 initialPos;
 
     void Start()
     {
+        initialPos = posicionReinicio.transform.position;
+
         cont = GameObject.Find("Counter").GetComponent<Counter>();
     }
     // Cuando la esfera entra en contacto con el socket

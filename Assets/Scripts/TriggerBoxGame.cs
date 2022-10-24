@@ -6,15 +6,17 @@ public class TriggerBoxGame : MonoBehaviour
 {
     public ParticleSystem[] SparkleVFX;
     
-    public Counter cont;
+    private Counter cont;
     public string TagVariableName;
     private int counter;
-    public Vector3 Reposicion;
+    public GameObject position;
+    private Vector3 Reposicion;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        Reposicion = position.transform.position;
         counter =0;
         cont = GameObject.Find("Counter").GetComponent<Counter>();
     }

@@ -23,10 +23,13 @@ public class TabOperadoresLogica : MonoBehaviour
 
     private bool m_SpherePresent = false;
 
-    private Vector3 initialPos = new Vector3(0.302f, 0.78f, -6.213f);
+    public GameObject posicionReinicio;
+    private Vector3 initialPos;
 
     void Start()
     {
+        initialPos = posicionReinicio.transform.position;
+
         cont = GameObject.Find("Counter").GetComponent<Counter>();
     }
 
