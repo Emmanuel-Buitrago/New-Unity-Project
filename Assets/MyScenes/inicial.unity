@@ -3559,6 +3559,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1358349929, guid: d45e8a6999317d2428a51593da44d3ab, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1358349930, guid: d45e8a6999317d2428a51593da44d3ab, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 243973097849659844, guid: d45e8a6999317d2428a51593da44d3ab,
         type: 3}
       propertyPath: m_IsActive
@@ -3841,9 +3849,19 @@ PrefabInstance:
       propertyPath: m_InvalidColorGradient.key1.r
       value: 0.9433962
       objectReference: {fileID: 0}
+    - target: {fileID: 6341845782098252963, guid: d45e8a6999317d2428a51593da44d3ab,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6722867354354495774, guid: d45e8a6999317d2428a51593da44d3ab,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509901044822395909, guid: d45e8a6999317d2428a51593da44d3ab,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
