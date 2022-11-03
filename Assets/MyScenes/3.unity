@@ -1578,7 +1578,7 @@ MonoBehaviour:
   m_SmoothPosition: 0
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
-  m_TrackRotation: 1
+  m_TrackRotation: 0
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
@@ -4098,7 +4098,7 @@ PrefabInstance:
     - target: {fileID: 2727951201451336876, guid: 33099651b8c66144aa2f4364d3c49ffb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2727951201451336876, guid: 33099651b8c66144aa2f4364d3c49ffb,
         type: 3}
@@ -4160,6 +4160,12 @@ PrefabInstance:
 --- !u!4 &668049635 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2727951201451336876, guid: 33099651b8c66144aa2f4364d3c49ffb,
+    type: 3}
+  m_PrefabInstance: {fileID: 668049634}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &668049636 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1882279864396421120, guid: 33099651b8c66144aa2f4364d3c49ffb,
     type: 3}
   m_PrefabInstance: {fileID: 668049634}
   m_PrefabAsset: {fileID: 0}
@@ -4668,7 +4674,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 7                          12            =            5
+  m_text: 7                          19            =            5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5015,7 +5021,7 @@ MonoBehaviour:
   m_SmoothPosition: 0
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
-  m_TrackRotation: 1
+  m_TrackRotation: 0
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
@@ -6104,7 +6110,7 @@ MonoBehaviour:
   m_SmoothPosition: 0
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
-  m_TrackRotation: 1
+  m_TrackRotation: 0
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
@@ -8711,7 +8717,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3            +            2                          11
+  m_text: 3            +            2                          5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9967,7 +9973,7 @@ MonoBehaviour:
   m_SmoothPosition: 0
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
-  m_TrackRotation: 1
+  m_TrackRotation: 0
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
@@ -11683,7 +11689,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feacbf3680bfadf4f915874549bbc4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SparkleFuseTrueVFX: []
+  SparkleFuseTrueVFX:
+  - {fileID: 668049636}
   SparkleFuseFalseVFX: []
   valorCollider:
   - =
@@ -12084,7 +12091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contador: 0
-  limite: 5
+  limite: 6
   NombreScene: inicial
 --- !u!4 &1930309813
 Transform:
@@ -12824,7 +12831,7 @@ MonoBehaviour:
   m_SmoothPosition: 0
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
-  m_TrackRotation: 1
+  m_TrackRotation: 0
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
@@ -13093,7 +13100,7 @@ MonoBehaviour:
   m_SmoothPosition: 0
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
-  m_TrackRotation: 1
+  m_TrackRotation: 0
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5

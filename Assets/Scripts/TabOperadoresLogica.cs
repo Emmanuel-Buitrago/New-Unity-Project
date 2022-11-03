@@ -48,7 +48,8 @@ public class TabOperadoresLogica : MonoBehaviour
             m_SpherePresent = false;
 
             Debug.Log("Respuesta correcta");
-            StartCoroutine(CorrectAnw(other));
+            Efectos(true);
+            cont.Change();
 
         }
         else
@@ -58,6 +59,8 @@ public class TabOperadoresLogica : MonoBehaviour
                 m_SpherePresent = false;
                 Debug.Log("Respuesta incorrecta");
                 gameObject.GetComponent<XRExclusiveSocketInteractor>().socketActive = false;
+                other.gameObject.transform.position = initialPos;
+                Debug.Log("Cambio de posicion");
                 StartCoroutine(IncorrectAnw(other));
             }
         }
@@ -66,18 +69,9 @@ public class TabOperadoresLogica : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         gameObject.GetComponent<XRExclusiveSocketInteractor>().socketActive = true;
-        other.gameObject.transform.position = initialPos;
-        Debug.Log("Cambio de posicion");
         Efectos(false);
     }
-    IEnumerator CorrectAnw(Collider other)
-    {
-        yield return new WaitForSeconds(0.1f);
-        other.gameObject.GetComponent<Transform>().Translate(new Vector3(0, 0, 0));
-        //desactivar other.script XR Grab interactor
-        Efectos(true);
-        cont.Change();
-    }
+
     public void SetFalsePresentSphere()
     {
         m_SpherePresent = false;

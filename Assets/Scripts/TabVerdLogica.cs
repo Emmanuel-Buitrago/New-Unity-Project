@@ -43,19 +43,23 @@ public class TabVerdLogica : MonoBehaviour
     // Cuando la esfera se mantiene en el socket
     void OnTriggerStay(Collider other)
     {   
-        if (m_SpherePresent==true && valorSphere == valorCollider)
+        if (m_SpherePresent & valorSphere == valorCollider)
         {
             m_SpherePresent = false;
 
             Debug.Log("Respuesta correcta");
             StartCoroutine(CorrectAnw(other));
 
+
         }
         else {
-            if (m_SpherePresent == true && valorSphere != valorCollider) {
+            if (m_SpherePresent & valorSphere != valorCollider) {
                 m_SpherePresent = false;
                 Debug.Log("Respuesta incorrecta");
                 gameObject.GetComponent<XRExclusiveSocketInteractor>().socketActive = false;
+
+                other.gameObject.transform.position = initialPos;
+                Debug.Log("Cambio de posicion");
                 StartCoroutine(IncorrectAnw(other));
             }
         }
@@ -63,11 +67,10 @@ public class TabVerdLogica : MonoBehaviour
     }
     IEnumerator IncorrectAnw(Collider other)
     {
-
         yield return new WaitForSeconds(0.1f);
+
         gameObject.GetComponent<XRExclusiveSocketInteractor>().socketActive = true;
-        other.gameObject.transform.position = initialPos;
-        Debug.Log("Cambio de posicion");
+
         Efectos(false);
     }
     IEnumerator CorrectAnw(Collider other)
@@ -81,7 +84,9 @@ public class TabVerdLogica : MonoBehaviour
         gameObject.GetComponent<XRExclusiveSocketInteractor>().enabled = false;
         Efectos(true);
         cont.Change();
+
     }
+
     public void SetFalsePresentSphere()
     {
         m_SpherePresent = false;
