@@ -2,6 +2,7 @@
 
 D. HDRISkybox
 
-CC0 1.0 Universal (CC0 1.0)  Public Domain Dedication 
+CC0 1.0 Universal (CC0 1.0) 
+Public Domain Dedication 
 This is a human-readable summary of the Legal Code (read the full text). 
 Disclaimer : https://hdrihaven.com/p/license.php 
