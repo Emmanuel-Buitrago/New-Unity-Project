@@ -8,16 +8,13 @@ public class TriggerBoxGame : MonoBehaviour
     
     private Counter cont;
     public string TagVariableName;
-    private int counter;
     public GameObject position;
     private Vector3 Reposicion;
-
 
     // Start is called before the first frame update
     void Start()
     {
         Reposicion = position.transform.position;
-        counter =0;
         cont = GameObject.Find("Counter").GetComponent<Counter>();
     }
 
@@ -27,9 +24,9 @@ public class TriggerBoxGame : MonoBehaviour
         if (other.GetComponent<Collider>().gameObject.CompareTag(TagVariableName))
         {
             other.GetComponent<Collider>().gameObject.SetActive(false);
-            Contador();
+            int aux = int.Parse(other.GetComponent<Collider>().gameObject.name);
+            Contador(aux);
             Efectos();
-            Debug.Log("Score "+TagVariableName+" : " + counter);
 
         }else{
             Reposicionar(other);
@@ -37,12 +34,9 @@ public class TriggerBoxGame : MonoBehaviour
         }
 
     }
-    public int Contador()
+    public void Contador(int id)
     {
-        counter += 1;
-        cont.Change();
-        return counter;
-
+        cont.Change(id);
     }
     private void Efectos()
     {

@@ -813,6 +813,7 @@ MonoBehaviour:
   SparkleFuseFalseVFX: []
   valorCollider: 1
   posicionReinicio: {fileID: 1021274862}
+  nameCount: 1
 --- !u!114 &177801502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1996,6 +1997,7 @@ MonoBehaviour:
   SparkleFuseFalseVFX: []
   valorCollider: 0
   posicionReinicio: {fileID: 1021274862}
+  nameCount: 2
 --- !u!1 &299363913
 GameObject:
   m_ObjectHideFlags: 0
@@ -5666,6 +5668,7 @@ MonoBehaviour:
   SparkleFuseFalseVFX: []
   valorCollider: 1
   posicionReinicio: {fileID: 1021274862}
+  nameCount: 3
 --- !u!114 &1114101412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9174,6 +9177,7 @@ MonoBehaviour:
   SparkleFuseFalseVFX: []
   valorCollider: 0
   posicionReinicio: {fileID: 1021274862}
+  nameCount: 0
 --- !u!114 &1646911759
 MonoBehaviour:
   m_ObjectHideFlags: 0

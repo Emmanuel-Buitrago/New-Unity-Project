@@ -525,6 +525,7 @@ MonoBehaviour:
   - <=
   - '!='
   posicionReinicio: {fileID: 674300922}
+  nameCount: 3
 --- !u!114 &45717610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2233,6 +2234,7 @@ MonoBehaviour:
   valorCollider:
   - <=
   posicionReinicio: {fileID: 674300922}
+  nameCount: 1
 --- !u!114 &366274876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4991,6 +4993,7 @@ MonoBehaviour:
   - '>='
   - <=
   posicionReinicio: {fileID: 674300922}
+  nameCount: 4
 --- !u!114 &824713928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11195,6 +11198,7 @@ MonoBehaviour:
   valorCollider:
   - '!='
   posicionReinicio: {fileID: 674300922}
+  nameCount: 2
 --- !u!114 &1804546698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11823,6 +11827,7 @@ MonoBehaviour:
   - '>='
   - '!='
   posicionReinicio: {fileID: 674300922}
+  nameCount: 5
 --- !u!114 &1909569045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13657,6 +13662,7 @@ MonoBehaviour:
   valorCollider:
   - '>='
   posicionReinicio: {fileID: 674300922}
+  nameCount: 0
 --- !u!114 &2109447442
 MonoBehaviour:
   m_ObjectHideFlags: 0

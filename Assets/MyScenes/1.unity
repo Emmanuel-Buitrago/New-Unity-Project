@@ -1476,7 +1476,7 @@ GameObject:
   - component: {fileID: 533759824}
   - component: {fileID: 533759823}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: 0
   m_TagString: BoolBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2223,7 +2223,7 @@ GameObject:
   - component: {fileID: 647050802}
   - component: {fileID: 647050807}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: 3
   m_TagString: StringBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4406,7 +4406,7 @@ GameObject:
   - component: {fileID: 1105305951}
   - component: {fileID: 1105305956}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: 4
   m_TagString: IntBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4822,7 +4822,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 111955518a2cb674da065ed6a196c073, type: 2}
+  - {fileID: 2100000, guid: 973a575a9afb7fc428c200ffb003f578, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5578,7 +5578,7 @@ GameObject:
   - component: {fileID: 1516980113}
   - component: {fileID: 1516980118}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: 1
   m_TagString: BoolBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6296,7 +6296,7 @@ GameObject:
   - component: {fileID: 1706076493}
   - component: {fileID: 1706076498}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: 2
   m_TagString: FloatBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6487,7 +6487,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 111955518a2cb674da065ed6a196c073, type: 2}
+  - {fileID: 2100000, guid: 973a575a9afb7fc428c200ffb003f578, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

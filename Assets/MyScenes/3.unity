@@ -3981,6 +3981,7 @@ MonoBehaviour:
   valorCollider:
   - /
   posicionReinicio: {fileID: 2066568989}
+  nameCount: 2
 --- !u!114 &586918949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4308,6 +4309,7 @@ MonoBehaviour:
   valorCollider:
   - '%'
   posicionReinicio: {fileID: 2066568989}
+  nameCount: 3
 --- !u!114 &625212738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6036,6 +6038,7 @@ MonoBehaviour:
   valorCollider:
   - '-'
   posicionReinicio: {fileID: 2066568989}
+  nameCount: 4
 --- !u!114 &983542705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6491,6 +6494,7 @@ MonoBehaviour:
   valorCollider:
   - x
   posicionReinicio: {fileID: 2066568989}
+  nameCount: 0
 --- !u!114 &1066984798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8654,6 +8658,7 @@ MonoBehaviour:
   valorCollider:
   - +
   posicionReinicio: {fileID: 2066568989}
+  nameCount: 1
 --- !u!114 &1269109696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12357,6 +12362,7 @@ MonoBehaviour:
   valorCollider:
   - =
   posicionReinicio: {fileID: 2066568989}
+  nameCount: 5
 --- !u!114 &1909569045
 MonoBehaviour:
   m_ObjectHideFlags: 0

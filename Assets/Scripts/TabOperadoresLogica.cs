@@ -25,6 +25,7 @@ public class TabOperadoresLogica : MonoBehaviour
 
     public GameObject posicionReinicio;
     private Vector3 initialPos;
+    public int nameCount;
 
     void Start()
     {
@@ -49,7 +50,7 @@ public class TabOperadoresLogica : MonoBehaviour
 
             Debug.Log("Respuesta correcta");
             Efectos(true);
-            cont.Change();
+            cont.Change(nameCount);
 
         }
         else
@@ -75,7 +76,7 @@ public class TabOperadoresLogica : MonoBehaviour
     public void SetFalsePresentSphere()
     {
         m_SpherePresent = false;
-        cont.Rest();
+        cont.Rest(nameCount);
     }
     public void BooleanSocketed()
     {

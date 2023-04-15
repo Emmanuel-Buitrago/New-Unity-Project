@@ -15,6 +15,7 @@ public class TabVerdLogica : MonoBehaviour
     private bool m_SpherePresent = false;
     public GameObject posicionReinicio;
     private  Vector3 initialPos;
+   public int nameCount;
 
     void Start()
     {
@@ -83,7 +84,7 @@ public class TabVerdLogica : MonoBehaviour
         //desactivar gameObject.XR exclusive Socket interactor
         gameObject.GetComponent<XRExclusiveSocketInteractor>().enabled = false;
         Efectos(true);
-        cont.Change();
+        cont.Change(nameCount);
 
     }
 
